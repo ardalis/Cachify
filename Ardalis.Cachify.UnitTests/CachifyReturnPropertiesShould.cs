@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Ardalis.Cachify.UnitTests
 {
-    public class CachifyGetPropertiesShould
+    public class CachifyReturnPropertiesShould
     {
         private class TestClass
         {
@@ -11,8 +11,9 @@ namespace Ardalis.Cachify.UnitTests
             public string Prop2 { get; set; }
             public string Prop3 { get; set; }
         }
+
         [Fact]
-        public void ReturnProperties()
+        public void ReturnSamePropertiesAsReflection()
         {
             var properties = new TestClass().GetType().GetProperties();
 
