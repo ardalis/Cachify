@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,5 +11,10 @@ namespace Ardalis.Cachify
         {
             return new Cachify(theObject);
         }
+
+        public static CachifyOf<T> CachifyOf<T>(this T theType)
+        {
+            return new CachifyOf<T>();
+        } 
     }
 }
