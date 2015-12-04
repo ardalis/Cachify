@@ -46,49 +46,73 @@ namespace BenchmarksConsole
 
             Console.WriteLine("Cachify<T> Static Extensions");
             Console.WriteLine("----------------------------");
-            // Properties
-            var propertyAccess = MeasureIterations(iterations, () =>
-            {
-                var result = typeof(Customer).GetProperties();
-            });
-            Console.WriteLine("GetProperties: " + propertyAccess);
+            GetPropertiesStatic(iterations);
+            GetClassAttributesStatic(iterations);
+            GetPropertyAttributesStatic(iterations);
+            Console.WriteLine();
 
-            var cachedPropertyAccess = MeasureIterations(iterations, () =>
-            {
-                var result = Cachify<Customer>.Properties;
-            });
-            Console.WriteLine("GetProperties (Cached): " + cachedPropertyAccess);
+            Console.WriteLine("Cachify Instance Extensions");
+            Console.WriteLine("---------------------------");
+            GetPropertiesInstance(iterations);
+            GetClassAttributesInstance(iterations);
+            // no sense getting property attributes as instance since it'll be same code
 
+            Console.ReadLine();
+        }
 
-            // Class Attributes
-            var classAttributeAccess = MeasureIterations(iterations, () =>
-            {
-                var result = typeof(Customer).GetCustomAttributes(false);
-            });
-            Console.WriteLine("GetClassAttributes: " + classAttributeAccess);
-
-            var cachedClassAttributeAccess = MeasureIterations(iterations, () =>
-            {
-                var result = Cachify<Customer>.Attributes;
-            });
-            Console.WriteLine("GetClassAttributes (Cached): " + cachedClassAttributeAccess);
-
-            // Property Attributes
-            var property = typeof (Customer).GetProperties().First(p => p.Name == "Name");
-            var propertyAttributeAccess = MeasureIterations(iterations, () =>
-            {
-                var result = property.GetCustomAttributes();
-            });
+        private static void GetPropertyAttributesStatic(int iterations)
+        {
+            var property = typeof(Customer).GetProperties().First(p => p.Name == "Name");
+            var propertyAttributeAccess = MeasureIterations(iterations, () => { var result = property.GetCustomAttributes(); });
             Console.WriteLine("GetPropertyAttributes: " + propertyAttributeAccess);
 
             var cachedProperty = Cachify<Customer>.Properties.First(p => p.Name == "Name");
-            var cachedPropertyAttributeAccess = MeasureIterations(iterations, () =>
-            {
-                var result = cachedProperty.GetAttributes();
-            });
+            var cachedPropertyAttributeAccess = MeasureIterations(iterations,
+                () => { var result = cachedProperty.GetAttributes(); });
             Console.WriteLine("GetPropertyAttributes (Cached): " + cachedPropertyAttributeAccess);
+        }
 
-            Console.ReadLine();
+        private static void GetClassAttributesStatic(int iterations)
+        {
+            var classAttributeAccess = MeasureIterations(iterations,
+                () => { var result = typeof(Customer).GetCustomAttributes(false); });
+            Console.WriteLine("GetClassAttributes: " + classAttributeAccess);
+
+            var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Attributes; });
+            Console.WriteLine("GetClassAttributes (Cached): " + cachedClassAttributeAccess);
+        }
+
+        private static void GetClassAttributesInstance(int iterations)
+        {
+            var customer = new Customer();
+
+            var classAttributeAccess = MeasureIterations(iterations,
+                () => { var result = customer.GetType().GetCustomAttributes(false); });
+            Console.WriteLine("Instance GetClassAttributes: " + classAttributeAccess);
+
+            var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetAttributes(); });
+            Console.WriteLine("Instance Cachify GetAttributes: " + cachedClassAttributeAccess);
+        }
+
+        private static void GetPropertiesStatic(int iterations)
+        {
+            var propertyAccess = MeasureIterations(iterations, () => { var result = typeof(Customer).GetProperties(); });
+            Console.WriteLine("GetProperties: " + propertyAccess);
+
+            var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Properties; });
+            Console.WriteLine("GetProperties (Cached): " + cachedPropertyAccess);
+        }
+
+        private static void GetPropertiesInstance(int iterations)
+        {
+            var customer = new Customer();
+
+            var propertyAccess = MeasureIterations(iterations, () => { var result = customer.GetType().GetProperties(); });
+            Console.WriteLine("Instance GetType GetProperties: " + propertyAccess);
+
+            // Note: This form must still call GetType() every iteration
+            var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetProperties(); });
+            Console.WriteLine("Instance Cachify GetProperties: " + cachedPropertyAccess);
         }
 
         private static long MeasureIterations(int iterations, Action action)
