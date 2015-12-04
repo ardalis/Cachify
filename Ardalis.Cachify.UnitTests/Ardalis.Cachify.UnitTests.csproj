@@ -56,10 +56,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachifyOfTGetPropertyAttributesShould.cs" />
-    <Compile Include="CachifyOfTGetMembersShould.cs" />
-    <Compile Include="CachifyOfTGetAttributesShould.cs" />
-    <Compile Include="CachifyReturnPropertiesShould.cs" />
+    <Compile Include="CachifyOfT\CachifyOfTGetPropertyAttributesShould.cs" />
+    <Compile Include="CachifyOfT\CachifyOfTGetMembersShould.cs" />
+    <Compile Include="CachifyOfT\CachifyOfTGetAttributesShould.cs" />
+    <Compile Include="Cachify\CachifyGetAttributesShould.cs" />
+    <Compile Include="Cachify\CachifyGetMembersShould.cs" />
+    <Compile Include="Cachify\CachifyGetPropertiesShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Ardalis.Cachify.UnitTests
+namespace Ardalis.Cachify.UnitTests.CachifyOfT
 {
     public class CachifyOfTGetAttributesShould
     {

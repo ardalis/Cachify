@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using Xunit;
 using System.Reflection;
+using Xunit;
 
-namespace Ardalis.Cachify.UnitTests
+namespace Ardalis.Cachify.UnitTests.CachifyOfT
 {
     public class CachifyOfTGetPropertyAttributesShould
     {

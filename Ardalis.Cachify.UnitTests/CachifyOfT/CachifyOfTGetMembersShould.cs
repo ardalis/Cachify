@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Xunit;
 
-namespace Ardalis.Cachify.UnitTests
+namespace Ardalis.Cachify.UnitTests.CachifyOfT
 {
     public class CachifyOfTGetMembersShould
     {

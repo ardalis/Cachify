@@ -7,7 +7,6 @@ namespace Ardalis.Cachify
 {
     public class Cachify
     {
-        private readonly object _theObject;
         private readonly Type _theObjectType;
         private static readonly Dictionary<Type, CachedProperty[]> TypePropertyCache = new Dictionary<Type, CachedProperty[]>();
         private static readonly Dictionary<Type, MemberInfo[]> TypeMemberCache = new Dictionary<Type, MemberInfo[]>();
@@ -16,8 +15,7 @@ namespace Ardalis.Cachify
 
         public Cachify(object theObject)
         {
-            _theObject = theObject;
-            _theObjectType = _theObject.GetType();
+            _theObjectType = theObject.GetType();
         }
 
         public CachedProperty[] GetProperties()
@@ -31,7 +29,7 @@ namespace Ardalis.Cachify
             return result;
         }
 
-        private MemberInfo[] GetMembers()
+        public MemberInfo[] GetMembers()
         {
             MemberInfo[] result;
             if (!TypeMemberCache.TryGetValue(_theObjectType, out result))
@@ -42,16 +40,13 @@ namespace Ardalis.Cachify
             return result;
         }
 
-        private Attribute[] GetAttributes()
+        public Attribute[] GetAttributes()
         {
             Attribute[] result;
             if (!TypeAttributeCache.TryGetValue(_theObjectType, out result))
             {
-                result = _theObjectType.GetCustomAttributes(true) as Attribute[];
-                if (result != null)
-                {
-                    TypeAttributeCache.Add(_theObjectType, _theObjectType.GetCustomAttributes(true) as Attribute[]);
-                }
+                result = _theObjectType.GetCustomAttributes(true).Cast<Attribute>().ToArray();
+                TypeAttributeCache.Add(_theObjectType, result);
             }
             return result;
         }

@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using System.Reflection;
 using Xunit;
 
-namespace Ardalis.Cachify.UnitTests
+namespace Ardalis.Cachify.UnitTests.Cachify
 {
-    public class CachifyReturnPropertiesShould
+    public class CachifyGetPropertiesShould
     {
         private class TestClass
         {
