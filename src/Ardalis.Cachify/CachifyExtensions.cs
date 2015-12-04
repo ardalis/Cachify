@@ -12,9 +12,9 @@ namespace Ardalis.Cachify
             return new Cachify(theObject);
         }
 
-        public static CachifyOf<T> CachifyOf<T>(this T theType)
+        public static Cachify<T> CachifyOf<T>(this T theType)
         {
-            return new CachifyOf<T>();
+            return new Cachify<T>();
         } 
     }
 }

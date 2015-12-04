@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Ardalis.Cachify.UnitTests
 {
-    public class CachifyOfGetAttributesShould
+    public class CachifyOfTGetAttributesShould
     {
         [MyTest]
         private class TestClass
@@ -22,9 +22,9 @@ namespace Ardalis.Cachify.UnitTests
 
             
 
-            cachedAttributes = CachifyOf<TestClass>.Attributes;
-            cachedAttributes = CachifyOf<TestClass>.Attributes;
-            cachedAttributes = CachifyOf<TestClass>.Attributes;
+            cachedAttributes = Cachify<TestClass>.Attributes;
+            cachedAttributes = Cachify<TestClass>.Attributes;
+            cachedAttributes = Cachify<TestClass>.Attributes;
 
             Assert.Equal(attributes, cachedAttributes);
 

@@ -4,17 +4,26 @@ using System.Reflection;
 
 namespace Ardalis.Cachify
 {
-    public class CachifyOf<T>
+    public class Cachify<T>
     {
         public static readonly Attribute[] Attributes;
         public static readonly MemberInfo[] Members;
         public static readonly CachedProperty[] Properties;
-        static CachifyOf()
+        static Cachify()
         {
             Type theType = typeof (T);
-            Attributes = GetAttributes(theType);
-            Members = GetMembers(theType);
-            Properties = GetProperties(theType);
+            if (Attributes == null)
+            {
+                Attributes = GetAttributes(theType);
+            }
+            if (Members == null)
+            {
+                Members = GetMembers(theType);
+            }
+            if (Properties == null)
+            {
+                Properties = GetProperties(theType);
+            }
         }
 
         private static MemberInfo[] GetMembers(Type myType)
@@ -30,6 +39,12 @@ namespace Ardalis.Cachify
         private static Attribute[] GetAttributes(Type myType)
         {
             return Attribute.GetCustomAttributes(myType);
+        }
+
+        public static CachedProperty FindProperty(string propertyName)
+        {
+            string upperName = propertyName.ToLowerInvariant();
+            return Properties.FirstOrDefault(p => p.Name.ToLowerInvariant() == upperName);
         }
     }
 }

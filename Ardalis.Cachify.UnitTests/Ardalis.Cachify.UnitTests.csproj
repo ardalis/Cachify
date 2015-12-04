@@ -56,9 +56,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachifyOfGetPropertyAttributesShould.cs" />
-    <Compile Include="CachifyOfGetMembersShould.cs" />
-    <Compile Include="CachifyOfGetAttributesShould.cs" />
+    <Compile Include="CachifyOfTGetPropertyAttributesShould.cs" />
+    <Compile Include="CachifyOfTGetMembersShould.cs" />
+    <Compile Include="CachifyOfTGetAttributesShould.cs" />
     <Compile Include="CachifyReturnPropertiesShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

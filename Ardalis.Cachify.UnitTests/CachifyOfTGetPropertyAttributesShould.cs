@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Ardalis.Cachify.UnitTests
 {
-    public class CachifyOfGetPropertyAttributesShould
+    public class CachifyOfTGetPropertyAttributesShould
     {
         private class TestClass
         {
@@ -23,13 +23,13 @@ namespace Ardalis.Cachify.UnitTests
             var attributes = propertyInfo.GetCustomAttributes();
 
             Attribute[] cachedAttributes;
-            cachedAttributes = CachifyOf<TestClass>.Properties.First(p => p.Name == "Name")
+            cachedAttributes = Cachify<TestClass>.Properties.First(p => p.Name == "Name")
                 .GetAttributes()
                 .ToArray();
-            cachedAttributes = CachifyOf<TestClass>.Properties.First(p => p.Name == "Name")
+            cachedAttributes = Cachify<TestClass>.Properties.First(p => p.Name == "Name")
                 .GetAttributes()
                 .ToArray();
-            cachedAttributes = CachifyOf<TestClass>.Properties.First(p => p.Name == "Name")
+            cachedAttributes = Cachify<TestClass>.Properties.First(p => p.Name == "Name")
                 .GetAttributes()
                 .ToArray();
 

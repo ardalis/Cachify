@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using Xunit;
 
 namespace Ardalis.Cachify.UnitTests
@@ -15,16 +16,16 @@ namespace Ardalis.Cachify.UnitTests
         [Fact]
         public void ReturnSamePropertiesAsReflection()
         {
-            var properties = new TestClass().GetType().GetProperties();
+            var properties = new TestClass().GetType().GetProperties(); // reflection
 
-            PropertyInfo[] cachedProperties;
+            CachedProperty[] cachedProperties;
 
             cachedProperties = new TestClass().Cachify().GetProperties();
             cachedProperties = new TestClass().Cachify().GetProperties();
             cachedProperties = new TestClass().Cachify().GetProperties();
 
-            Assert.Equal(properties, cachedProperties);
-
+            Assert.Equal(properties.Count(), cachedProperties.Count());
+            Assert.Equal(properties.FirstOrDefault().Name, cachedProperties.FirstOrDefault().Name);
         }
     }
 }

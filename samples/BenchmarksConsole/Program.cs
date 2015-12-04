@@ -42,8 +42,10 @@ namespace BenchmarksConsole
     {
         static void Main(string[] args)
         {
-            int iterations = 10000000;
+            int iterations = 10 * 1000 * 1000;
 
+            Console.WriteLine("Cachify<T> Static Extensions");
+            Console.WriteLine("----------------------------");
             // Properties
             var propertyAccess = MeasureIterations(iterations, () =>
             {
@@ -53,7 +55,7 @@ namespace BenchmarksConsole
 
             var cachedPropertyAccess = MeasureIterations(iterations, () =>
             {
-                var result = CachifyOf<Customer>.Properties;
+                var result = Cachify<Customer>.Properties;
             });
             Console.WriteLine("GetProperties (Cached): " + cachedPropertyAccess);
 
@@ -67,7 +69,7 @@ namespace BenchmarksConsole
 
             var cachedClassAttributeAccess = MeasureIterations(iterations, () =>
             {
-                var result = CachifyOf<Customer>.Attributes;
+                var result = Cachify<Customer>.Attributes;
             });
             Console.WriteLine("GetClassAttributes (Cached): " + cachedClassAttributeAccess);
 
@@ -79,7 +81,7 @@ namespace BenchmarksConsole
             });
             Console.WriteLine("GetPropertyAttributes: " + propertyAttributeAccess);
 
-            var cachedProperty = CachifyOf<Customer>.Properties.First(p => p.Name == "Name");
+            var cachedProperty = Cachify<Customer>.Properties.First(p => p.Name == "Name");
             var cachedPropertyAttributeAccess = MeasureIterations(iterations, () =>
             {
                 var result = cachedProperty.GetAttributes();

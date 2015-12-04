@@ -1,10 +1,9 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using Xunit;
 
 namespace Ardalis.Cachify.UnitTests
 {
-    public class CachifyOfGetMembersShould
+    public class CachifyOfTGetMembersShould
     {
         private class TestClass
         {
@@ -24,9 +23,9 @@ namespace Ardalis.Cachify.UnitTests
 
             MemberInfo[] cachedMembers;
 
-            cachedMembers = CachifyOf<TestClass>.Members;
-            cachedMembers = CachifyOf<TestClass>.Members;
-            cachedMembers = CachifyOf<TestClass>.Members;
+            cachedMembers = Cachify<TestClass>.Members;
+            cachedMembers = Cachify<TestClass>.Members;
+            cachedMembers = Cachify<TestClass>.Members;
 
             Assert.Equal(members, cachedMembers);
 
