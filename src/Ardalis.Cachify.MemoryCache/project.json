@@ -1,0 +1,17 @@
+{
+  "version": "1.0.2",
+  "title": "Cachify",
+  "description": "Cachify - A library for simplifying access to data caching.",
+  "authors": [ "Steve Smith (@ardalis)" ],
+  "tags": [ "caching" ],
+  "projectUrl": "http://github.com/ardalis/cachify/",
+  "licenseUrl": "http://github.com/ardalis/cachify/",
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {}
+  },
+  "dependencies": {
+    "Microsoft.Extensions.Caching.Abstractions": "1.0.0-rc1-final" ,
+    "Microsoft.Extensions.Logging": "1.0.0-rc1-final"
+  }
+}
