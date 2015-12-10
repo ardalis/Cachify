@@ -1,0 +1,16 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Cachify.Reflection.Tests Class Library",
+  "authors": [ "stevesmith" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "frameworks": {
+    "dnx451": {}
+  },
+  "dependencies": {
+    "xunit": "2.1.0-rc1-build3168",
+    "Cachify.Reflection": "1.0.0-*"
+  }
+}
