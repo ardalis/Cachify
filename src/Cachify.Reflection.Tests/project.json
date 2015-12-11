@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "Cachify.Reflection.Tests Class Library",
   "authors": [ "stevesmith" ],
@@ -7,10 +7,14 @@
   "licenseUrl": "",
 
   "frameworks": {
-    "dnx451": {}
+    "dnx452": {
+      "frameworkAssemblies": {
+        "System.Runtime" :  "4.0.0.0"
+      }  
+    }
   },
   "dependencies": {
-    "xunit": "2.1.0-rc1-build3168",
+    "xunit": "2.1.0",
     "Cachify.Reflection": "1.0.0-*"
   }
 }
