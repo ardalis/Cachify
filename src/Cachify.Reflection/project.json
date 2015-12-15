@@ -7,6 +7,6 @@
   "projectUrl": "http://github.com/ardalis/cachify/",
   "licenseUrl": "http://github.com/ardalis/cachify/",
   "frameworks": {
-    "dnx452": { }
+    "dnx451": { }
   }
 }

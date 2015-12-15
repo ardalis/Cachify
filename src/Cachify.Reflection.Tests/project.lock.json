@@ -2,10 +2,10 @@
   "locked": false,
   "version": 2,
   "targets": {
-    "DNX,Version=v4.5.2": {
+    "DNX,Version=v4.5.1": {
       "Cachify.Reflection/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.2"
+        "framework": "DNX,Version=v4.5.1"
       },
       "xunit/2.1.0": {
         "type": "package",
@@ -66,10 +66,10 @@
         }
       }
     },
-    "DNX,Version=v4.5.2/win7-x86": {
+    "DNX,Version=v4.5.1/win7-x86": {
       "Cachify.Reflection/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.2"
+        "framework": "DNX,Version=v4.5.1"
       },
       "xunit/2.1.0": {
         "type": "package",
@@ -130,10 +130,10 @@
         }
       }
     },
-    "DNX,Version=v4.5.2/win7-x64": {
+    "DNX,Version=v4.5.1/win7-x64": {
       "Cachify.Reflection/1.0.0": {
         "type": "project",
-        "framework": "DNX,Version=v4.5.2"
+        "framework": "DNX,Version=v4.5.1"
       },
       "xunit/2.1.0": {
         "type": "package",
@@ -320,10 +320,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "xunit >= 2.1.0",
+      "xunit >= 2.1.0-*",
       "Cachify.Reflection >= 1.0.0-*"
     ],
-    "DNX,Version=v4.5.2": [
+    "DNX,Version=v4.5.1": [
       "fx/System.Runtime >= 4.0.0"
     ]
   }

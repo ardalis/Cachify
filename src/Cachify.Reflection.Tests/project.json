@@ -7,14 +7,14 @@
   "licenseUrl": "",
 
   "frameworks": {
-    "dnx452": {
+    "dnx451": {
       "frameworkAssemblies": {
         "System.Runtime" :  "4.0.0.0"
       }  
     }
   },
   "dependencies": {
-    "xunit": "2.1.0",
+    "xunit": "2.1.0-*",
     "Cachify.Reflection": "1.0.0-*"
   }
 }
