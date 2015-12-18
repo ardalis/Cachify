@@ -1,12 +1,17 @@
 configuration: Release
 
 install:
-  - cmd:
-      set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-      dnvm install 1.0.0-update1
+ - cmd: nuget sources add -Name api.nuget.org -Source https://api.nuget.org/v3/index.json
+ 
 # restore NuGet packages before running MSBuild
 before_build:
-  - nuget restore
+    - ps: "&{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
+    - cmd: dnvm install 1.0.0-rc1-final
+    - cmd: dnvm upgrade
+    - cmd: dnvm update-self
+    - cmd: dnvm list
+    - cmd: dnvm use 1.0.0-rc1-final
+	- cmd: dnu restore Cachify
     
 # package Web Application projects for Web Deploy
 build:
