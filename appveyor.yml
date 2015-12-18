@@ -11,7 +11,7 @@ before_build:
     - cmd: dnvm update-self
     - cmd: dnvm list
     - cmd: dnvm use 1.0.0-rc1-final
-    - cmd: dnu restore Cachify
+    - cmd: dnu restore
     
 # package Web Application projects for Web Deploy
 build:
