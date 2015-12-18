@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ardalis.Cachify;
 using System.Reflection;
 
 namespace BenchmarksConsole
@@ -66,10 +62,10 @@ namespace BenchmarksConsole
             var propertyAttributeAccess = MeasureIterations(iterations, () => { var result = property.GetCustomAttributes(); });
             Console.WriteLine("GetPropertyAttributes: " + propertyAttributeAccess);
 
-            var cachedProperty = Cachify<Customer>.Properties.First(p => p.Name == "Name");
-            var cachedPropertyAttributeAccess = MeasureIterations(iterations,
-                () => { var result = cachedProperty.GetAttributes(); });
-            Console.WriteLine("GetPropertyAttributes (Cached): " + cachedPropertyAttributeAccess);
+            //var cachedProperty = Cachify<Customer>.Properties.First(p => p.Name == "Name");
+            //var cachedPropertyAttributeAccess = MeasureIterations(iterations,
+            //    () => { var result = cachedProperty.GetAttributes(); });
+            //Console.WriteLine("GetPropertyAttributes (Cached): " + cachedPropertyAttributeAccess);
         }
 
         private static void GetClassAttributesStatic(int iterations)
@@ -78,8 +74,8 @@ namespace BenchmarksConsole
                 () => { var result = typeof(Customer).GetCustomAttributes(false); });
             Console.WriteLine("GetClassAttributes: " + classAttributeAccess);
 
-            var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Attributes; });
-            Console.WriteLine("GetClassAttributes (Cached): " + cachedClassAttributeAccess);
+            //var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Attributes; });
+            //Console.WriteLine("GetClassAttributes (Cached): " + cachedClassAttributeAccess);
         }
 
         private static void GetClassAttributesInstance(int iterations)
@@ -90,8 +86,8 @@ namespace BenchmarksConsole
                 () => { var result = customer.GetType().GetCustomAttributes(false); });
             Console.WriteLine("Instance GetClassAttributes: " + classAttributeAccess);
 
-            var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetAttributes(); });
-            Console.WriteLine("Instance Cachify GetAttributes: " + cachedClassAttributeAccess);
+            //var cachedClassAttributeAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetAttributes(); });
+            //Console.WriteLine("Instance Cachify GetAttributes: " + cachedClassAttributeAccess);
         }
 
         private static void GetPropertiesStatic(int iterations)
@@ -99,8 +95,8 @@ namespace BenchmarksConsole
             var propertyAccess = MeasureIterations(iterations, () => { var result = typeof(Customer).GetProperties(); });
             Console.WriteLine("GetProperties: " + propertyAccess);
 
-            var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Properties; });
-            Console.WriteLine("GetProperties (Cached): " + cachedPropertyAccess);
+            //var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = Cachify<Customer>.Properties; });
+            //Console.WriteLine("GetProperties (Cached): " + cachedPropertyAccess);
         }
 
         private static void GetPropertiesInstance(int iterations)
@@ -111,8 +107,8 @@ namespace BenchmarksConsole
             Console.WriteLine("Instance GetType GetProperties: " + propertyAccess);
 
             // Note: This form must still call GetType() every iteration
-            var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetProperties(); });
-            Console.WriteLine("Instance Cachify GetProperties: " + cachedPropertyAccess);
+            //var cachedPropertyAccess = MeasureIterations(iterations, () => { var result = customer.Cachify().GetProperties(); });
+            //Console.WriteLine("Instance Cachify GetProperties: " + cachedPropertyAccess);
         }
 
         private static long MeasureIterations(int iterations, Action action)

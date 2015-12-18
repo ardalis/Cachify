@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalis.Cachify", "src\Ardalis.Cachify\Ardalis.Cachify.csproj", "{4C568190-59F3-4BF8-B831-0C71B83124FD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{68F40820-0872-4165-BAF5-7296348DE21D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EE4AE9FB-0F92-4CE0-AC11-EC2B1226BB51}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalis.Cachify.UnitTests", "Ardalis.Cachify.UnitTests\Ardalis.Cachify.UnitTests.csproj", "{11EF79EA-58EA-47CE-A3BE-4A8573817E0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarksConsole", "samples\BenchmarksConsole\BenchmarksConsole.csproj", "{5F44860D-0AB6-4037-BDC5-3D07460A5F44}"
 EndProject
@@ -32,14 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4C568190-59F3-4BF8-B831-0C71B83124FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C568190-59F3-4BF8-B831-0C71B83124FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C568190-59F3-4BF8-B831-0C71B83124FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C568190-59F3-4BF8-B831-0C71B83124FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11EF79EA-58EA-47CE-A3BE-4A8573817E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11EF79EA-58EA-47CE-A3BE-4A8573817E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11EF79EA-58EA-47CE-A3BE-4A8573817E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11EF79EA-58EA-47CE-A3BE-4A8573817E0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5F44860D-0AB6-4037-BDC5-3D07460A5F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5F44860D-0AB6-4037-BDC5-3D07460A5F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F44860D-0AB6-4037-BDC5-3D07460A5F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,8 +49,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4C568190-59F3-4BF8-B831-0C71B83124FD} = {68F40820-0872-4165-BAF5-7296348DE21D}
-		{11EF79EA-58EA-47CE-A3BE-4A8573817E0B} = {EE4AE9FB-0F92-4CE0-AC11-EC2B1226BB51}
 		{5F44860D-0AB6-4037-BDC5-3D07460A5F44} = {C9A62E62-2233-485A-A28C-E3CA4DE7CE58}
 		{B697099B-CAFD-4AE6-BA56-60434E17C24F} = {68F40820-0872-4165-BAF5-7296348DE21D}
 		{B47AEDA7-3D0F-4437-84BF-91AAACCEBEB0} = {68F40820-0872-4165-BAF5-7296348DE21D}
