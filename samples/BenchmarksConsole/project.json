@@ -1,0 +1,24 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "BenchmarksConsole Console Application",
+  "authors": [ "TPI Admin" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "Cachify.Reflection": "1.0.0-*"
+  },
+
+  "commands": {
+    "BenchmarksConsole": "BenchmarksConsole"
+  },
+
+  "frameworks": {
+    "dnx451": { }
+  }
+}
