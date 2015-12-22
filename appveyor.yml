@@ -18,7 +18,7 @@ build:
   verbosity: minimal
   publish_wap: true
 
-  after_build:
+after_build:
 - appveyor PushArtifact Cachify.MemoryCache.1.0.0.nupkg
 
 test: off
