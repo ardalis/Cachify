@@ -1,0 +1,32 @@
+configuration: Release
+
+install:
+ - cmd: nuget sources add -Name api.nuget.org -Source https://api.nuget.org/v3/index.json
+ 
+# restore NuGet packages before running MSBuild
+before_build:
+    - ps: "&{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
+    - cmd: dnvm install 1.0.0-rc1-final
+    - cmd: dnvm upgrade
+    - cmd: dnvm update-self
+    - cmd: dnvm list
+    - cmd: dnvm use 1.0.0-rc1-final
+    - cmd: dnu restore
+    
+# package Web Application projects for Web Deploy
+build:
+  verbosity: minimal
+  publish_wap: true
+
+after_build:
+- appveyor PushArtifact Cachify.MemoryCache.1.0.0.nupkg
+
+test: off
+
+deploy:
+  provider: NuGet
+  server:
+  api_key: 96cb40ba-f73e-48fd-b550-d77e4a476078
+  skip_symbols: true
+  symbol_server: # remove to push symbols to SymbolSource.org
+  artifact: bin\Cachify.Reflection\Release\Cachify.Reflection.1.0.0.nupkg, bin\Cachify.MemoryCache\Release\Cachify.MemoryCache.1.0.0.nupkg

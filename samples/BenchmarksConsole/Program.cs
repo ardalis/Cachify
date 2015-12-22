@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ardalis.Cachify;
 using System.Reflection;
+using Ardalis.Cachify.Reflection;
 
 namespace BenchmarksConsole
 {
@@ -26,17 +23,17 @@ namespace BenchmarksConsole
 
     public class SampleClassAttribute : Attribute
     {
-        
+
     }
 
     public class SampleMethodAttribute : Attribute
     {
-        
+
     }
 
     public class SamplePropertyAttribute : Attribute
     {
-        
+
     }
     class Program
     {

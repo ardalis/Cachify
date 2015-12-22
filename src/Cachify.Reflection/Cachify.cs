@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Ardalis.Cachify
+namespace Ardalis.Cachify.Reflection
 {
     public class Cachify
     {

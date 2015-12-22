@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ardalis.Cachify
+namespace Ardalis.Cachify.Reflection
 {
     public static class CachifyExtensions
     {

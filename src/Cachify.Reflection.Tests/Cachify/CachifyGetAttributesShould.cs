@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Ardalis.Cachify.Reflection;
+using System;
 using System.Linq;
-using Ardalis.Cachify.UnitTests.CachifyOfT;
 using Xunit;
 
 namespace Ardalis.Cachify.UnitTests.Cachify

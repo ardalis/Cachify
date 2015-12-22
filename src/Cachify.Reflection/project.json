@@ -1,0 +1,12 @@
+﻿{
+  "version": "1.0.0",
+  "title": "Cachify.MemoryCache",
+  "description": "A library for simplifying access to in-memory data caching.",
+  "authors": [ "Steve Smith (@ardalis)" ],
+  "tags": [ "caching" ],
+  "projectUrl": "http://github.com/ardalis/cachify/",
+  "licenseUrl": "http://github.com/ardalis/cachify/",
+  "frameworks": {
+    "dnx451": { }
+  }
+}
