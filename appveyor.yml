@@ -21,6 +21,7 @@ build:
 
 after_build:
 - appveyor PushArtifact artifacts\bin\Cachify.MemoryCache\Release\Cachify.MemoryCache.1.0.0.nupkg
+- appveyor PushArtifact artifacts\bin\Cachify.Reflection\Release\Cachify.Reflection.1.0.0.nupkg
 
 test: off
 
