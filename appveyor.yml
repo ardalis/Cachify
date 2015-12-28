@@ -30,4 +30,4 @@ deploy:
   api_key: 96cb40ba-f73e-48fd-b550-d77e4a476078
   skip_symbols: true
   symbol_server: # remove to push symbols to SymbolSource.org
-  artifact: bin\Cachify.Reflection\Release\Cachify.Reflection.1.0.0.nupkg, bin\Cachify.MemoryCache\Release\Cachify.MemoryCache.1.0.0.nupkg
+  artifacts: /.*\.nupkg/
