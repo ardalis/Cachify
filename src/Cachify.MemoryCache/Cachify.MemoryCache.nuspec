@@ -5,6 +5,6 @@
     <version>1.0.1</version>
     <authors>Steve Smith</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description></description>
+    <description>Test description</description>
   </metadata>
 </package>
