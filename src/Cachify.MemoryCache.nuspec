@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Cachify.MemoryCache</id>
+    <version>1.0.1</version>
+    <authors>Steve Smith</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Test description</description>
+  </metadata>
+</package>
