@@ -19,10 +19,6 @@ build:
   publish_wap: true
   publish_nuget: true
 
-after_build:
-- appveyor PushArtifact artifacts\bin\Cachify.MemoryCache\Release\Cachify.MemoryCache.1.0.0.nupkg
-- appveyor PushArtifact src\artifacts\bin\Cachify.Reflection\Release\Cachify.Reflection.1.0.0.nupkg
-
 test: off
 
 deploy:
